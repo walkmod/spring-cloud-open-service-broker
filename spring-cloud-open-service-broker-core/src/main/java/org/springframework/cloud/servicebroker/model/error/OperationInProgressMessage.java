@@ -16,6 +16,7 @@
 
 package org.springframework.cloud.servicebroker.model.error;
 
+import java.io.*;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,7 +32,9 @@ import org.springframework.cloud.servicebroker.model.AsyncServiceBrokerResponse;
  * 		Service Broker API specification</a>
  */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class OperationInProgressMessage {
+public class OperationInProgressMessage implements Serializable {
+
+	private static final long serialVersionUID = -3042686055658047285L;
 
 	private final String operation;
 
